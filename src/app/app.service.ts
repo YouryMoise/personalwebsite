@@ -23,9 +23,9 @@ export class AppService {
   ebayCard:Card = new Card(
     "eBay Software Engineering Intern",
     "assets/ebaySign.jpg",
-    "Creating AI tool using LLMs to improve the experience of eBay's sellers",
+    "Developed AI tool using LLMs to speed up manual process by 30% and improve eBay's seller experience.",
     "/ebay",
-    "June 2024 - Present",
+    "June 2024 - September 2024",
     ["Software", "Python", "Streamlit", "LLM", "Machine Learning",
       "Documentation", "UI", "Unit Test", "Docker", "Kubernetes", "GitHub", "Git"
 
@@ -336,6 +336,66 @@ Factory design pattern`,
     ""
   )
 
+  pongCard:Card = new Card(
+    "Digital Systems Laboratory - Video Pipeline",
+    "assets/Pong.mp4",//should be a video
+    `This lab had us build a video pipeline and finite state machine to implement pong on our FPGAs. This involved implementing:
+    \tA video signal generator to send our horizontal/vertical coordinates/blanking periods
+    \tThe TMDS algorithm used to minimize high-low logic transitions on our wires
+    \tA differential balancing algorithm to balance the number of high-low signals being sent
+    `,
+    "",
+"Fall 2024",
+    [
+      "SystemVerilog","FPGA","FSM", "Finite State Machine", "Video"
+    ]
+  );
+
+  cameraCard:Card = new Card(
+    "Digital Systems Laboratory - BROM Camera and Object Tracking",
+    "assets/ObjectTracking.mp4",//should be a video
+    `For this lab, we implemented:
+    A pixel reconstructor, which took 8-bit data, sync, and valid signals from a camera to output 16-bit pixel values
+    Palletizing to reduce the amount of space required to display an image on-screen
+    Sprite sheets to transition between different images at the push of a button
+    Subsampling to read camera data and 1X, 2X, and 4X scaling
+    An image mask to capture color information
+    Object tracking using a major-minor FSM divider to track the center of mass of certain objects
+    `,
+    "",
+"Fall 2024",
+    [
+      "SystemVerilog","FPGA","FSM", "Finite State Machine", "Video",
+      "Camera",
+    ]
+  );
+
+  uartAudioCard:Card = new Card(
+    "Digital Systems Laboratory - UART Audio",
+    "assets/Grid.jpg",//should be a video
+    `For this lab, we implemented a UART transmitter and receiver (implemented as Finite State Machine). We used these to upload sound recorded from a microphone to our computers, as well as downloading audio files from our computers to the memory of our FPGAs.
+
+    `,
+    "",
+"Fall 2024",
+    [
+      "SystemVerilog","FPGA","FSM", "Finite State Machine", "UART",
+      "Audio",
+    ]
+  );
+
+  nasdaqCard:Card = new Card(
+    "Nasdaq Software and AI Engineering Intern",
+    "assets/NasdaqSkyline.jpg",
+    `Worked with a partner to automate the year-end review process for Nasdaq employees using AWS Bedrock LLMs, Python, and external APIs, potentially saving the company $1,000,000 and 20,000 employee work hours per year in the future.`,
+    "",
+"January 2025 - February 2025",
+    [
+      "LLM","Python","AWS", "Bedrock", "API",
+      "GitLab"
+    ]
+  );
+  
 
 
 
@@ -345,7 +405,7 @@ Factory design pattern`,
     this.pgeCard, this.fulCard, this.holoCard, this.treeCard, this.bmsCard, this.cellCard,
     this.motorCard, this.canCard, this.serialCard, this.infotainmentCard, this.initCard,
     this.solvingCard, this.skillsCard, this.featureCard, this.optimalCard, this.recognitionCard,
-    this.yoloCard, this.eltPresentationCard, this.chatbotCard
+    this.yoloCard, this.eltPresentationCard, this.chatbotCard, this.pongCard, this.cameraCard, this.uartAudioCard, this.nasdaqCard
   ]
   getCards(titles:string[]):BehaviorSubject<Card[]>{
     let relevantCards:Card[] = []

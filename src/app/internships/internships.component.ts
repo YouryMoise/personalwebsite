@@ -10,10 +10,11 @@ import { AppService } from '../app.service';
 export class InternshipsComponent {
   cards:Card[] = []
   relevantCards = [
+    "Nasdaq Software and AI Engineering Intern",
     "eBay Software Engineering Intern",
     "Pacific Gas & Electric Company - Information Technology Intern",
     "Friends of The Underline - Technology Intern",
-    "3D Hologroup - Marketing Intern"
+    "3D Hologroup - Marketing Intern",
   ]
   constructor(
     private appService:AppService

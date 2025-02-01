@@ -12,9 +12,12 @@ import { PersonalProjectsComponent } from './personal-projects/personal-projects
 import { EcProjectComponent } from './ec-project/ec-project.component';
 import { HighlightsComponent } from './highlights/highlights.component';
 import { EbayComponent } from './ebay/ebay.component';
+import { NasdaqComponent } from './nasdaq/nasdaq.component';
+
 
 const routes: Routes = [
-  { path: '', redirectTo: '/highlights', pathMatch: 'full' }, // Default route
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
+  // { path: '', redirectTo: '/highlights', pathMatch: 'full' }, // Default route
   { path: 'home', component: HomeComponent},
   { path: 'sevt', component:SevtPageComponent },
   { path: 'wordSearch', component:WordSearchComponent},
@@ -24,7 +27,9 @@ const routes: Routes = [
   { path: 'personal', component: PersonalProjectsComponent},
   { path: 'ec-project', component: EcProjectComponent},
   { path: 'highlights', component: HighlightsComponent},
-  { path: 'ebay', component:EbayComponent}
+  { path: 'ebay', component:EbayComponent},
+  { path: 'nasdaq', component:NasdaqComponent}
+
 
 ];
 

@@ -24,6 +24,7 @@ import { NavItemComponent } from './nav-item/nav-item.component';
 import { SearchComponent } from './search/search.component';
 import {MatIconModule} from '@angular/material/icon';
 import { EbayComponent } from './ebay/ebay.component';
+import { NasdaqComponent } from './nasdaq/nasdaq.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { EbayComponent } from './ebay/ebay.component';
     HighlightsComponent,
     NavItemComponent,
     SearchComponent,
-    EbayComponent
+    EbayComponent,
+    NasdaqComponent,
   ],
   imports: [
     BrowserModule,

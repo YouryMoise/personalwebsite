@@ -11,6 +11,9 @@ import { AppService } from '../app.service';
 export class ClassProjectsComponent {
   cards:Card[] = []
   relevantCards = [
+    "Digital Systems Laboratory - BROM Camera and Object Tracking",
+    "Digital Systems Laboratory - Video Pipeline",
+    "Digital Systems Laboratory - UART Audio",
     "Computation Structures - Operating System Design",
     "Computation Structures - Processor Design",
     "Encoding Culture - Final Project",
