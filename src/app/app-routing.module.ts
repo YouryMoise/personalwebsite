@@ -16,9 +16,9 @@ import { NasdaqComponent } from './nasdaq/nasdaq.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
-  // { path: '', redirectTo: '/highlights', pathMatch: 'full' }, // Default route
-  { path: 'home', component: HomeComponent},
+  // { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
+  { path: '', redirectTo: '/highlights', pathMatch: 'full' }, // Default route
+  // { path: 'home', component: HomeComponent},
   { path: 'sevt', component:SevtPageComponent },
   { path: 'wordSearch', component:WordSearchComponent},
   { path: 'extras', component: ExtrasComponent,},
