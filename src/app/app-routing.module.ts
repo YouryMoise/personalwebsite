@@ -13,7 +13,7 @@ import { EcProjectComponent } from './ec-project/ec-project.component';
 import { HighlightsComponent } from './highlights/highlights.component';
 import { EbayComponent } from './ebay/ebay.component';
 import { NasdaqComponent } from './nasdaq/nasdaq.component';
-
+import { IotComponent } from './iot/iot.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: 'ec-project', component: EcProjectComponent},
   { path: 'highlights', component: HighlightsComponent},
   { path: 'ebay', component:EbayComponent},
-  { path: 'nasdaq', component:NasdaqComponent}
+  { path: 'nasdaq', component:NasdaqComponent},
+  { path: 'iot', component:IotComponent}
 
 
 ];

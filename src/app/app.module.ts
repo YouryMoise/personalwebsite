@@ -25,6 +25,7 @@ import { SearchComponent } from './search/search.component';
 import {MatIconModule} from '@angular/material/icon';
 import { EbayComponent } from './ebay/ebay.component';
 import { NasdaqComponent } from './nasdaq/nasdaq.component';
+import { IotComponent } from './iot/iot.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { NasdaqComponent } from './nasdaq/nasdaq.component';
     SearchComponent,
     EbayComponent,
     NasdaqComponent,
+    IotComponent,
   ],
   imports: [
     BrowserModule,

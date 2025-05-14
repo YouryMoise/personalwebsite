@@ -395,6 +395,86 @@ Factory design pattern`,
       "GitLab"
     ]
   );
+
+  iotCard:Card = new Card(
+    "Mobile and Sensor Computing - Aquatic Environment Monitoring",
+    "assets/final_proj_diagram.drawio.png",
+    `Worked with two partners to develop a low-power, modular, and scalable system for\
+    monitoring the state of aquatic environments, including the temperature,\
+    conductivity, and pressure, and wirelessly transmitting data to central server\
+    for interpolation, analysis, and plotting. `,
+    "/iot",
+    "Spring 2025",
+    [
+      "Embedded Systems"
+    ]
+  );
+  // learn more
+  // system description (same pic as cover probably)
+  iotSystemCard:Card = new Card(
+    "System Architecture",
+    "assets/final_proj_diagram.drawio.png",
+    `Our system had three components: the central processing station, server nodes, and\
+    river nodes. River nodes collect sensor data about the water and wirelessly transmit them\
+    to the server node. The server node aggregates this data and sends them to the central processing\
+    station, which handles analysis, interpolation, and 3D graph generation`,
+    "",
+    "",
+    [
+
+    ]
+  );
+
+  iotRiverNodeCard:Card = new Card(
+    "River Nodes",
+    "assets/riverNode.jpg",
+    `River nodes consisted of an Arduino nano, a UART-controlled ATGM336H GPS module, a DS18B20 temperature sensor\
+    a KEYESTUDIO TDS meter for measuring water quality, an I2C-controlled GY-MS5837-30BA pressure\
+    sensor, and a NRF24L01+ RF module for wireless communication. To minimize power consumption, river\
+    nodes were typically asleep, but periodically woke up to collect sensor data and transmit them to\
+    the server node. This transmission could be done point-to-point or as part of a mesh network, which allowed us\
+    to forward packets from one river node through another river node if it was out of range due to the\
+    limitations of our RF modules.`,
+    "",
+    "",
+    []
+  );
+
+  iotServerNodeCard:Card = new Card(
+    "Server Node",
+    "assets/serverNode.jpg",
+    `The server node consisted of an Arduino nano and the same NRF24L01+ RF module has the river nodes.\
+    It listened to all the messages being sent by the river nodes and uploaded them to our central processing\
+    station for processing.`
+  );
+
+  iotCentralProcessingCard:Card = new Card(
+    "Central Processing Station",
+    "assets/centralProcessing.png",
+    `The central processing station read in packets of data from the server node. Each packet included\
+    the river node ID, temperature, pressure, GPS coordinates, and TDS value. We then used these packets\
+    to graph the temperature and TDS values over time and pressure, which we used to infer depth of the river nodes.\
+    We used the GPS coordinates to display temperature and TDS values over a map of the body of water\
+    we were monitoring.`
+  )
+
+  iotRangeTestingCard:Card = new Card(
+    "Range vs Packet Success Rate Testing",
+    "assets/combinedRangeTest.png",
+    "The distance between the river nodes in the mesh networked involved an important\
+    tradeoff: greater distance meant fewer nodes and lower cost, but also meant lower packet success rates and\
+    retransmissions, increasing latency and power consumption. To determine the optimal distance, we conducted\
+    tests that involved placing a river node some fixed distance away from the server node, sending 30 packets, and\
+    counting the number of packets that were acknowledged by the server node. We did this in 5 meter increments from\
+    0 to 60 meters, and found that, beyond 50 meters, the RF modules were almost unusable, and that 30 meters allowed\
+    the nodes to be relatively spread out without significant sacrifices in packet success rates."
+  )
+
+  // TX node
+  // RX node
+  // server
+  // range testing
+  // battery life testing (table setup + math)
   
 
 
@@ -405,7 +485,9 @@ Factory design pattern`,
     this.pgeCard, this.fulCard, this.holoCard, this.treeCard, this.bmsCard, this.cellCard,
     this.motorCard, this.canCard, this.serialCard, this.infotainmentCard, this.initCard,
     this.solvingCard, this.skillsCard, this.featureCard, this.optimalCard, this.recognitionCard,
-    this.yoloCard, this.eltPresentationCard, this.chatbotCard, this.pongCard, this.cameraCard, this.uartAudioCard, this.nasdaqCard
+    this.yoloCard, this.eltPresentationCard, this.chatbotCard, this.pongCard, this.cameraCard, this.uartAudioCard, 
+    this.nasdaqCard, this.iotCard, this.iotSystemCard, this.iotRiverNodeCard, this.iotServerNodeCard,
+    this.iotCentralProcessingCard, this.iotRangeTestingCard
   ]
   getCards(titles:string[]):BehaviorSubject<Card[]>{
     let relevantCards:Card[] = []
