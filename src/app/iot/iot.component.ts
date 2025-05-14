@@ -14,7 +14,8 @@ cards:Card[] = []
     "River Nodes",
     "Server Node",
     "Central Processing Station",
-    "Range vs Packet Success Rate Testing"
+    "Range vs Packet Success Rate Testing",
+    "Power Consumption Test"
   ]
   constructor(
     private appService:AppService
