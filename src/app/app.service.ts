@@ -12,7 +12,7 @@ export class AppService {
     "assets/Gemini.JPG",
     `Co-leading the Electrical Engineering subteam of SEVT, a student-run group that designs, builds, and races a solar-powered vehicle every 2 years at the American Solar Challenge`,
     "/sevt",
-    "Fall 2022 - Present",
+    "Fall 2022 - Spring 2025",
     ["C", "C language", "C code", "C coding langauge", "C programming language","Motors", "Embedded systems", "Firmware", "Hardware", "High voltage",
       "Embedded software", "Embedded firmware", "DSP","CAN",
          "Digital Signal Processing", "UART", "Controller Area Network", "Telemetry",
@@ -479,12 +479,96 @@ Factory design pattern`,
     which translated to 60 hours of battery life when using 4 AA batteries. We could increase the\
     battery life by adding solar panels to the nodes, using a larer battery pack, or using an MCU\
     that is specifically designed for sleep and wakeup operations."
-  ); // was the 60 hours for after we started turning the sensors on and off
-  // TX node
-  // RX node
-  // server
-  // range testing
-  // battery life testing (table setup + math)
+  );
+
+  // using i2c to control digitpots (get specific type)
+  //  breadboard testing and debugging, converting potentiometer value
+    // to rdac value
+  // using oscilliscope to debug rdac (maybe don't include, getting lost in details)
+  // code for getting motor speed using the pulses; making sure to take sampling speed into account
+  
+  // might be time to split this page into
+  // firmware lead vs EE lead
+
+  controlboardRedesignCard: Card = new Card(
+    "Motor Controlboard Redesign",
+    "assets/mitsubaControlboard.jpg",
+    "Our team switched to using new motor controllers this year, so\
+    we developed a new PCB that was made to work with the new controllers. I wrote and debugged the software\
+    for this PCB, including the logic for reading an analog pedal input and using an I2C-controlled digital\
+    potentiometer to set digital outputs. The new software also needed to be able to read the velocity and error\
+    messages from the controllers as necessary. The former works by sending a pulse every time the motor completes\
+    1/48th of a rotation, and the latter sends a digital high signal 1-8 times to indicate an error specified in the\
+    datasheet. We tested the velocity values we were reading and found that they were nearly identical to the ground\
+    truth velocity values that we had from the previous controllers and camera testing.",
+  );
+
+  // writing and testing code for basic functionality
+  // spi, usb for serial debugging, adc, i2c,
+  // CAN to an extent
+  // creating libraries for all of them so they could be accessible
+  // without worrying about Cube logic
+  // working with the makefiles
+
+  stmBuildSystemCard:Card = new Card(
+    "STM Build System Setup",
+    "assets/buildSystemPic.jpg",
+    "Our team transitioned from using the AT90CAN128 chips to STM32 chips this semester,\
+    which required setting up a new build system for writing firmware and flashing it to\
+    our circuit boards. I was one of three responsible for testing basic functionality, including\
+    SPI, USB transmission for serial logging, reading ADCs, and parts of CAN. Once these were tested and\
+    working, I made SEVT-specific libraries for importing and using them. I also set up custom makefiles\
+    for tracking these library files and flashing code over USB without additional hardware. All of this\
+    streamlined our firmware development process and improved our ability to quickly create and test projects."
+  );
+
+  // worked with Co-lead to decide what major components would be and how they would
+  //  interact (boards, battery, charger)
+  // made schematic (maybe include link to a copy of it or some larger picture)
+  // also made CAN plan to detail the exact CAN messages being sent/received
+  //  name, ID, fields, sender/receiver boards
+  newEESystemCard:Card = new Card(
+    "New Electrical System Design",
+    "assets/highLevelDiagram.png",
+    "At the beginning of fall 2024, my co-lead and I worked to design the electrical system\
+    for our new car. This involved determining which circuit boards we needed, how they would\
+    communicate with each other and peripherals such as our motor controllers and charger, and\
+    how we would interface everything with power from the battery and solar panels. We also created what\
+    we called a \"CAN Plan\", which documented all the CAN messages\
+    in our system, including their names, ID's, fields, and the boards that were sending or receiving them."
+  );
+
+  attentivUCard:Card = new Card(
+    "Robotic Head - AttentivU Project",
+    "assets/attentivUPic.png",
+    "As an undergraduate research assistant for the AttentivU project of MIT's Fluid Interfaces Group, I implemented\
+    the electrical system of an open-source robotic head, as well as 3D printing and assembling several mechanical\
+    components. Implementing the former involved soldering and testing a PCA board that controlled 19 servo motors\
+    by communicating with an Arduino Mega over I2C. Once the mechanical components of the head were assembled, I\
+    wired everything up and made the face out of a silicone mold."
+  );
+
+  macleaCard:Card = new Card(
+    "MacLea",
+    "assets/maclea.png",
+    "MacLea is a tool designed to teach kids about machine learning by allowing them to create models\
+    using Scratch-like code blocks. I worked on an NLP pipeline to allow users to input a prompt, such\
+    as \"give me a machine learning model for classifying pictures of clothes\", and generate the blocks required\
+    to train and run that model. Behind the scenes, this pipeline used a retrieval augmented generation (RAG) architecture\
+    to generate the XML code representation of the blocks the user would have to create. Check it out at\
+    maclea.mit.edu!",
+    "",
+    "Fall 2023 - Spring 2024"
+  );
+
+
+  // general build system
+
+
+  // FTDI chip prototyping and schematic
+  //  maybe not since it won't be used anymore
+
+  // overall EE system (diagram + CAN plan)
   
 
 
@@ -497,7 +581,9 @@ Factory design pattern`,
     this.solvingCard, this.skillsCard, this.featureCard, this.optimalCard, this.recognitionCard,
     this.yoloCard, this.eltPresentationCard, this.chatbotCard, this.pongCard, this.cameraCard, this.uartAudioCard, 
     this.nasdaqCard, this.iotCard, this.iotSystemCard, this.iotRiverNodeCard, this.iotServerNodeCard,
-    this.iotCentralProcessingCard, this.iotRangeTestingCard, this.iotPowerTestingCard
+    this.iotCentralProcessingCard, this.iotRangeTestingCard, this.iotPowerTestingCard,
+    this.controlboardRedesignCard, this.stmBuildSystemCard, this.newEESystemCard,
+    this.attentivUCard, this.macleaCard
   ]
   getCards(titles:string[]):BehaviorSubject<Card[]>{
     let relevantCards:Card[] = []

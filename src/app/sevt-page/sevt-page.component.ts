@@ -21,9 +21,12 @@ export class SevtPageComponent {
 
   str:string = "hi";
   relevantCards = [
+    "Motor Controlboard Redesign",
     "Battery Management System (BMS)",
     "Cellboards",
     "Motors",
+    "STM Build System Setup",
+    "New Electrical System Design",
     "CAN Library Restructuring",
     "UART Drivers",
     "Infotainment",

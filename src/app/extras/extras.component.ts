@@ -11,6 +11,8 @@ export class ExtrasComponent {
   cards:Card[] = []
   relevantCards = [
     "Solar Electric Vehicle Team (SEVT)",
+    "MacLea",
+    // "Robotic Head - AttentivU Project", leave out for now in case Natliya doesn't want it known
     "Arcturus (Autonomous Robotics Team)"
   ]
   constructor(

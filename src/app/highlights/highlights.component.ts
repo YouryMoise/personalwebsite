@@ -11,7 +11,9 @@ export class HighlightsComponent {
 
   cards:Card[] = []
   relevantCards = [
+    "Mobile and Sensor Computing - Aquatic Environment Monitoring",
     "Solar Electric Vehicle Team (SEVT)",
+    "Nasdaq Software and AI Engineering Intern",
     "eBay Software Engineering Intern",
     "Word Search Solver"
   ]
